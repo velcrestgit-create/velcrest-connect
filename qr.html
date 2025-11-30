@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velcrest Connect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- OWNER DASHBOARD THEME (Dark Premium) --- */
+        :root {
+            --teal: #2BB6B8;
+            --purple: #7A1FA2;
+            --dark-bg: #1a1a1a;
+            --white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--purple); /* Matches your physical card back */
+            background-image: linear-gradient(135deg, var(--purple) 0%, #4a148c 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        /* The Card Container */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px 30px;
+            border-radius: 30px;
+            width: 85%;
+            max-width: 350px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid white;
+            background: white;
+            object-fit: contain;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        h1 { margin: 0; font-size: 20px; font-weight: 600; letter-spacing: 0.5px; }
+        p { margin: 5px 0 25px; opacity: 0.8; font-size: 14px; }
+
+        /* The QR Code Box */
+        .qr-frame {
+            background: white;
+            padding: 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .qr-frame img {
+            width: 200px;
+            height: 200px;
+            display: block;
+        }
+
+        /* Share Button */
+        .btn-share {
+            background: var(--teal);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: transform 0.2s;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(43, 182, 184, 0.4);
+        }
+
+        .btn-share:active { transform: scale(0.95); }
+
+        .footer-link {
+            margin-top: 20px;
+            font-size: 12px;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glass-panel">
+        <img src="logo.png" alt="Velcrest" class="logo">
+        <h1>Velcrest Pool Xpert</h1>
+        <p>Scan to Connect</p>
+
+        <div class="qr-frame">
+            <img src="qr.png" alt="Scan Me">
+        </div>
+
+        <button onclick="shareLink()" class="btn-share">
+            <i class="fas fa-share-alt"></i> Share Link
+        </button>
+
+        <br>
+        <a href="index.html" class="footer-link">Preview Client View</a>
+    </div>
+
+    <script>
+        function shareLink() {
+            // This grabs your current website URL but removes 'qr.html' 
+            // so you share the MAIN card, not this display page.
+            const mainUrl = window.location.href.replace('qr.html', '');
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Velcrest Pool Xpert',
+                    text: 'Here is my digital business card:',
+                    url: mainUrl
+                })
+                .catch(console.error);
+            } else {
+                // Fallback for desktop or old browsers
+                navigator.clipboard.writeText(mainUrl);
+                alert('Link copied to clipboard: ' + mainUrl);
+            }
+        }
+    </script>
+
+</body>
+</html>
