@@ -113,6 +113,15 @@
         }
     </style>
 </head>
+    <script>
+        window.onload = function() {
+            // This waits 1 second after the page loads, then triggers the download
+            setTimeout(function() {
+                window.location.href = 'contact.vcf';
+            }, 1000);
+        };
+    </script>
+</body>
 <body>
 
     <div class="card-container">
