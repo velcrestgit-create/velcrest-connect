@@ -1,0 +1,143 @@
+:root {
+    --primary-teal: #2BB6B8; /* Sampled from your logo */
+    --primary-purple: #7A1FA2; /* Sampled from your logo */
+    --dark-text: #333333;
+    --light-bg: #f4f7f6;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-bg);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.card-container {
+    background-color: var(--white);
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.header {
+    background: linear-gradient(135deg, var(--primary-teal), var(--primary-purple));
+    color: var(--white);
+    text-align: center;
+    padding: 40px 20px 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.logo-placeholder img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid var(--white);
+    background-color: var(--white);
+    object-fit: contain;
+}
+
+h1 {
+    margin: 15px 0 5px;
+    font-size: 22px;
+}
+
+.subtitle {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    justify-content: center;
+    margin-top: -10px;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s;
+    font-size: 14px;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background-color: var(--primary-purple);
+    color: var(--white);
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    color: var(--white);
+}
+
+.details {
+    padding: 0 20px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+    color: var(--dark-text);
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.icon {
+    width: 25px;
+    color: var(--primary-teal);
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.hours {
+    padding: 20px;
+    background-color: #fafafa;
+    margin: 20px;
+    border-radius: 15px;
+    font-size: 13px;
+}
+
+.hours h3 {
+    margin-top: 0;
+    color: var(--primary-purple);
+}
+
+.hours ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hours li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    font-size: 12px;
+}
