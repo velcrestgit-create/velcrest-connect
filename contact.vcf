@@ -2,9 +2,10 @@ BEGIN:VCARD
 VERSION:3.0
 FN:Velcrest Pool Xpert
 ORG:Velcrest Pool Xpert
-TEL;TYPE=WORK,VOICE:+27762554655
+TEL;TYPE=WORK,VOICE:0875501287
+TEL;TYPE=CELL,VOICE:0762554655
 EMAIL:pools@velcrest.africa
 URL:https://velcrest.africa
-ADR;TYPE=WORK:;;De La Rey St & Lanham St;Erasmus;Bronkhorstspruit;1020;South Africa
-NOTE:Swimming Pool & Hot Tub Service. Reliable advice and professional service.
+ADR;TYPE=WORK:;;De La Rey St;Bronkhorstspruit;Gauteng;1020;South Africa
+NOTE:Swimming Pool & Hot Tub Service.
 END:VCARD
