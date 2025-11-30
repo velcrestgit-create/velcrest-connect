@@ -1,143 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 :root {
-    --primary-teal: #2BB6B8; /* Sampled from your logo */
-    --primary-purple: #7A1FA2; /* Sampled from your logo */
-    --dark-text: #333333;
-    --light-bg: #f4f7f6;
+    /* Your Brand Colors */
+    --teal: #2BB6B8;
+    --purple: #7A1FA2;
+    --dark-purple: #4a148c;
+    --text-dark: #2d3436;
+    --text-light: #636e72;
+    --bg-gray: #dfe6e9;
     --white: #ffffff;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--light-bg);
+* {
     margin: 0;
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.card-container {
-    background-color: var(--white);
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Background gradient for the whole screen */
+    background: linear-gradient(135deg, var(--teal), var(--purple));
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.main-container {
     width: 100%;
-    max-width: 400px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 380px; /* Phone screen width */
+}
+
+.business-card {
+    background-color: var(--white);
+    border-radius: 35px; /* The very round corners from your example */
     overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     position: relative;
 }
 
-.header {
-    background: linear-gradient(135deg, var(--primary-teal), var(--primary-purple));
-    color: var(--white);
-    text-align: center;
-    padding: 40px 20px 30px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+/* The colored top part */
+.card-header-bg {
+    height: 140px;
+    background: linear-gradient(to right, var(--purple), var(--teal));
+    /* Creating a subtle curve at the bottom of the header */
+    border-bottom-left-radius: 30% 20px;
+    border-bottom-right-radius: 30% 20px;
 }
 
-.logo-placeholder img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 4px solid var(--white);
+/* Positioning the logo to overlap */
+.logo-wrapper {
+    text-align: center;
+    margin-top: -75px; /* Pulls the logo up half its height */
+    position: relative;
+    z-index: 10;
+}
+
+#main-logo {
+    width: 150px;
+    height: 150px;
+    object-fit: contain; /* Ensures logo doesn't stretch */
     background-color: var(--white);
-    object-fit: contain;
+    border-radius: 50%; /* Makes it a circle */
+    border: 5px solid var(--white); /* Thick white border */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card-body {
+    text-align: center;
+    padding: 20px 25px 40px;
 }
 
 h1 {
-    margin: 15px 0 5px;
-    font-size: 22px;
+    color: var(--text-dark);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
-.subtitle {
-    margin: 0;
+.job-title {
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.sub-text {
+    color: var(--text-light);
     font-size: 14px;
-    opacity: 0.9;
+    margin-bottom: 25px;
 }
 
-.actions {
+/* Pill Buttons Styles */
+.main-actions {
     display: flex;
-    gap: 10px;
-    padding: 20px;
-    justify-content: center;
-    margin-top: -10px;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
-.btn {
+.btn-pill {
     flex: 1;
-    padding: 12px;
-    border-radius: 12px;
-    text-align: center;
+    padding: 12px 20px;
+    border-radius: 50px; /* Pill shape */
     text-decoration: none;
     font-weight: 600;
-    transition: transform 0.2s;
     font-size: 14px;
-}
-
-.btn:active {
-    transform: scale(0.98);
-}
-
-.btn-primary {
-    background-color: var(--primary-purple);
-    color: var(--white);
-}
-
-.btn-whatsapp {
-    background-color: #25D366;
-    color: var(--white);
-}
-
-.details {
-    padding: 0 20px;
-}
-
-.detail-item {
     display: flex;
     align-items: center;
-    padding: 15px;
-    border-bottom: 1px solid #eee;
-    text-decoration: none;
-    color: var(--dark-text);
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.detail-item:last-child {
-    border-bottom: none;
+.btn-pill:active {
+    transform: scale(0.97);
 }
 
-.icon {
-    width: 25px;
-    color: var(--primary-teal);
-    margin-right: 15px;
-    font-size: 18px;
+.btn-teal {
+    background-color: var(--teal);
+    color: var(--white);
+    box-shadow: 0 4px 10px rgba(43, 182, 184, 0.3);
 }
 
-.hours {
-    padding: 20px;
-    background-color: #fafafa;
-    margin: 20px;
-    border-radius: 15px;
-    font-size: 13px;
+.btn-purple {
+    background-color: var(--purple);
+    color: var(--white);
+    box-shadow: 0 4px 10px rgba(122, 31, 162, 0.3);
 }
 
-.hours h3 {
-    margin-top: 0;
-    color: var(--primary-purple);
-}
-
-.hours ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.hours li {
+/* Contact List Styles */
+.contact-list {
+    text-align: left;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.footer {
-    text-align: center;
-    padding: 20px;
-    color: #888;
+.contact-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 15px;
+    transition: background-color 0.2s;
+}
+
+.contact-item:hover {
+    background-color: #f0f2f5;
+}
+
+.icon-box {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(43, 182, 184, 0.1); /* Light teal bg */
+    color: var(--teal);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-right: 15px;
+}
+
+.contact-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
     font-size: 12px;
+    color: var(--text-light);
+}
+
+.value {
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.bottom-links {
+    margin-top: 30px;
+    font-size: 12px;
+    color: var(--text-light);
+    border-top: 1px solid #eee;
+    padding-top: 20px;
 }
