@@ -6,7 +6,7 @@
     <title>Velcrest Pool Xpert</title>
     
     <style>
-        /* CSS STYLES START HERE */
+        /* CSS STYLES */
         :root {
             --teal: #2BB6B8;
             --purple: #7A1FA2;
@@ -41,7 +41,7 @@
             height: 120px;
             border-bottom-left-radius: 50%;
             border-bottom-right-radius: 50%;
-            margin-bottom: 50px; /* Space for logo */
+            margin-bottom: 50px;
         }
 
         .logo-box {
@@ -49,7 +49,7 @@
             height: 120px;
             background-color: white;
             border-radius: 50%;
-            margin: -110px auto 0; /* Pulls it up */
+            margin: -110px auto 0;
             padding: 5px;
             position: relative;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -58,7 +58,6 @@
             justify-content: center;
         }
 
-        /* Ensure logo fits inside the circle */
         .logo-box img {
             width: 90%;
             height: 90%;
@@ -101,8 +100,16 @@
         }
 
         .info-item {
-            padding: 10px;
+            padding: 12px;
             border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-item a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 10px;
         }
     </style>
 </head>
@@ -122,9 +129,18 @@
         <a href="https://wa.me/27762554655" class="btn btn-wa">WhatsApp Us</a>
 
         <div class="info-list">
-            <div class="info-item">📞 +27 76 255 4655</div>
-            <div class="info-item">📧 pools@velcrest.africa</div>
-            <div class="info-item">📍 De La Rey St, Bronkhorstspruit</div>
+            <div class="info-item">
+                📞 <a href="tel:0875501287">087 550 1287</a>
+            </div>
+            <div class="info-item">
+                📱 <a href="https://wa.me/27762554655">076 255 4655 (WhatsApp)</a>
+            </div>
+            <div class="info-item">
+                📧 <a href="mailto:pools@velcrest.africa">pools@velcrest.africa</a>
+            </div>
+            <div class="info-item">
+                📍 De La Rey St, Bronkhorstspruit
+            </div>
         </div>
 
     </div>
