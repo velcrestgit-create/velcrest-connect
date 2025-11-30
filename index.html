@@ -5,12 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Velcrest Pool Xpert</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* --- INTERNAL CSS START --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --teal: #2BB6B8;
+            --purple: #7A1FA2;
+            --dark-purple: #4a148c;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --bg-gray: #dfe6e9;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--teal), var(--purple)); /* Full screen gradient */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .business-card {
+            background-color: var(--white);
+            border-radius: 30px;
+            overflow: hidden; /* Ensures content stays inside rounded corners */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            position: relative;
+            text-align: center;
+        }
+
+        /* The Colored Top Header */
+        .card-header-bg {
+            height: 130px;
+            background: linear-gradient(to right, var(--purple), var(--teal));
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
+            width: 100%;
+        }
+
+        /* The Logo Circle */
+        .logo-wrapper {
+            margin-top: -75px; /* Pulls logo UP into the header */
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+        }
+
+        #main-logo {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            background-color: var(--white);
+            border-radius: 50%;
+            border: 5px solid var(--white);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        .card-body {
+            padding: 15px 25px 30px;
+        }
+
+        h1 {
+            color: var(--text-dark);
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            color: var(--teal);
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .sub-text {
+            color: var(--text-light);
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        /* BUTTONS */
+        .main-actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .btn-pill {
+            flex: 1;
+            padding: 12px 10px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .btn-pill:active { transform: scale(0.95); }
+
+        .btn-teal { background-color: var(--teal); color: var(--white); }
+        .btn-purple { background-color: var(--purple); color: var(--white); }
+
+        /* CONTACT LIST */
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: left;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 12px;
+            background-color: #f8f9fa;
+            border: 1px solid #eee;
+        }
+
+        .icon-box {
+            width: 35px;
+            height: 35px;
+            background-color: rgba(43, 182, 184, 0.15);
+            color: var(--teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .contact-text {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .label { font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+        .value { color: var(--text-dark); font-weight: 600; font-size: 13px; word-break: break-all;}
+
+        .bottom-links {
+            margin-top: 25px;
+            font-size: 11px;
+            color: #aaa;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+    </style>
 </head>
 <body>
 
     <div class="main-container">
-        
         <div class="business-card">
             
             <div class="card-header-bg"></div>
@@ -24,7 +192,7 @@
                 <p class="job-title">Swimming Pool & Hot Tub Service</p>
                 <p class="sub-text">Reliable advice & professional service.</p>
 
-                 <div class="main-actions">
+                <div class="main-actions">
                     <a href="contact.vcf" class="btn-pill btn-teal">
                         <i class="fas fa-user-plus"></i> Save Contact
                     </a>
@@ -33,7 +201,7 @@
                     </a>
                 </div>
 
-                 <div class="contact-list">
+                <div class="contact-list">
                     <a href="tel:+27762554655" class="contact-item">
                         <div class="icon-box"><i class="fas fa-phone"></i></div>
                         <div class="contact-text">
@@ -58,7 +226,7 @@
                         </div>
                     </a>
 
-                    <a href="https://goo.gl/maps/YOUR_GOOGLE_MAPS_LINK_HERE" target="_blank" class="contact-item">
+                    <a href="https://goo.gl/maps/YOUR_GOOGLE_MAPS_LINK" target="_blank" class="contact-item">
                         <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
                         <div class="contact-text">
                             <span class="label">Address</span>
@@ -67,8 +235,8 @@
                     </a>
                 </div>
 
-                 <div class="bottom-links">
-                    <p>Hours: Mon-Fri 09:00-18:00 | Sat Closed | Sun 09:00-14:00</p>
+                <div class="bottom-links">
+                    <p>Mon-Fri 09:00-18:00 | Sun 09:00-14:00</p>
                 </div>
 
             </div>
